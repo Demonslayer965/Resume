@@ -3,27 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yadnesh Kulkarni — Cloud & Security Engineer</title>
+  <title>Yadnesh Kulkarni — Cloud &amp; Security Engineer</title>
   <meta name="description" content="Cloud & Security Engineer with 4+ years across AWS, Azure, OCI. Specialising in IaC, Kubernetes, DevSecOps, and AI pipelines." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- ── CURSOR SPOTLIGHT ─────────────────────────────────────── -->
+  <div id="spotlight"></div>
 
   <!-- ── NAV ─────────────────────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="monogram">YK</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#summary"        class="nav-link">Summary</a></li>
         <li><a href="#experience"     class="nav-link">Experience</a></li>
         <li><a href="#skills"         class="nav-link">Skills</a></li>
         <li><a href="#certifications" class="nav-link">Certifications</a></li>
       </ul>
       <a href="Resume-final.docx" download class="btn-download">Download CV</a>
-      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">&#9776;</button>
     </div>
   </nav>
 
@@ -31,22 +34,44 @@
 
     <!-- ── HERO ────────────────────────────────────────────────── -->
     <section id="hero">
-      <div class="container">
-        <p class="hero-eyebrow">Available for new opportunities</p>
-        <h1>Yadnesh Kulkarni</h1>
-        <p class="hero-title">Cloud &amp; Security Engineer</p>
+      <canvas id="particles"></canvas>
+      <div class="hero-content container">
+        <p class="hero-eyebrow"><span class="dot-pulse"></span> Available for new opportunities</p>
+        <h1 class="hero-name">Yadnesh <span class="gradient-text">Kulkarni</span></h1>
+        <p class="hero-title">
+          <span class="static-text">&gt; </span>
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </p>
         <div class="contact-pills">
           <a href="tel:+919527839573" class="pill">+91-9527839573</a>
           <a href="mailto:yadneshkulkarni3@gmail.com" class="pill">yadneshkulkarni3@gmail.com</a>
           <span class="pill">Maharashtra, India</span>
           <a href="https://www.linkedin.com/in/yadnesh-kulkarni/" target="_blank" rel="noopener" class="pill pill-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
           <a href="https://github.com/Demonslayer965" target="_blank" rel="noopener" class="pill pill-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             GitHub
           </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number"><span class="counter" data-target="4">0</span>+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number"><span class="counter" data-target="40">0</span>%</span>
+            <span class="stat-label">Faster Deployments</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number"><span class="counter" data-target="40">0</span>%</span>
+            <span class="stat-label">Less Downtime</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">0.<span class="counter" data-target="90">0</span></span>
+            <span class="stat-label">RAG Accuracy</span>
+          </div>
         </div>
         <div class="hero-tags">
           <span class="tag">AWS</span>
@@ -59,83 +84,99 @@
           <span class="tag">DevSecOps</span>
         </div>
       </div>
+      <div class="hero-scroll-hint">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
     </section>
 
     <!-- ── SUMMARY ──────────────────────────────────────────────── -->
     <section id="summary">
       <div class="container">
-        <h2 class="section-label">Professional Summary</h2>
-        <p class="summary-text">
-          Cloud &amp; Security Engineer with 4+ years of experience architecting multi-cloud
-          infrastructure across AWS, Azure, and OCI, with hands-on delivery of production AI
-          pipelines and DevSecOps programs. Expertise spans Infrastructure as Code
-          (Terraform, Ansible, CDK), container orchestration, CI/CD automation, endpoint
-          security (WithSecure Element EDR), and shift-left security tooling (Snyk, Nessus)
-          — consistently cutting deployment time by 40% and reducing system downtime by 40%.
-        </p>
+        <h2 class="section-label reveal">Professional Summary</h2>
+        <div class="summary-card reveal">
+          <div class="summary-icon">⚡</div>
+          <p class="summary-text">
+            Cloud &amp; Security Engineer with <strong>4+ years</strong> of experience architecting multi-cloud
+            infrastructure across AWS, Azure, and OCI, with hands-on delivery of production AI
+            pipelines and DevSecOps programs. Expertise spans Infrastructure as Code
+            (Terraform, Ansible, CDK), container orchestration, CI/CD automation, endpoint
+            security (WithSecure Element EDR), and shift-left security tooling (Snyk, Nessus)
+            — consistently cutting deployment time by <strong>40%</strong> and reducing system downtime by <strong>40%</strong>.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- ── EXPERIENCE ───────────────────────────────────────────── -->
     <section id="experience">
       <div class="container">
-        <h2 class="section-label">Experience</h2>
+        <h2 class="section-label reveal">Experience</h2>
+        <div class="timeline">
 
-        <!-- Roima Intelligence -->
-        <div class="job-card current">
-          <div class="job-header">
-            <div class="job-meta">
-              <span class="company">Roima Intelligence</span>
-              <span class="location">Ahmedabad, India</span>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot current"></div>
+            <div class="job-card current">
+              <div class="job-header">
+                <div class="job-meta">
+                  <span class="company">Roima Intelligence</span>
+                  <span class="location">Ahmedabad, India</span>
+                </div>
+                <span class="dates">May 2025 – Present</span>
+              </div>
+              <p class="job-title">Cloud Engineer</p>
+              <ul class="job-bullets">
+                <li>Architected and deployed scalable multi-cloud infrastructure across Azure, AWS, and OCI, incorporating high-availability and disaster-recovery configurations.</li>
+                <li>Designed and deployed a production RAG pipeline using AWS Bedrock and S3 Vectors with CDK L1 constructs and CloudFormation, enabling multi-tenant semantic search with <span class="highlight-metric">0.90 cosine similarity accuracy</span> and <span class="highlight-metric">sub-1000 ms retrieval latency</span>.</li>
+                <li>Automated end-to-end infrastructure provisioning with Terraform and Ansible integrated into GitHub Actions CI/CD pipelines, cutting deployment time by <span class="highlight-metric">40%</span>.</li>
+                <li>Administered production Kubernetes clusters for containerised workloads and orchestrated a full K8S infrastructure migration from Azure to AWS with zero data loss.</li>
+                <li>Architected and rolled out a Snyk DevSecOps program for an internal department, integrating repository scanning, container image scanning, and CI/CD pipeline gates to enforce shift-left security practices.</li>
+                <li>Managed endpoint security operations using WithSecure Element EDR, monitoring and triaging security alerts across laptops, VMs, and servers to ensure rapid threat detection and response.</li>
+                <li>Conducted cloud and container vulnerability assessments using Nessus, remediating findings to maintain a hardened security posture.</li>
+                <li>Lead cloud cost-optimisation initiatives by enforcing governance policies and rightsizing resource utilisation across cloud tenancies.</li>
+                <li>Implemented Site24x7 observability solutions and streamlined incident-response workflows through Jira ITSM integration.</li>
+              </ul>
             </div>
-            <span class="dates">May 2025 – Present</span>
           </div>
-          <p class="job-title">Cloud Engineer</p>
-          <ul class="job-bullets">
-            <li>Architected and deployed scalable multi-cloud infrastructure across Azure, AWS, and OCI, incorporating high-availability and disaster-recovery configurations.</li>
-            <li>Designed and deployed a production RAG pipeline using AWS Bedrock and S3 Vectors with CDK L1 constructs and CloudFormation, enabling multi-tenant semantic search with <strong>0.90 cosine similarity accuracy</strong> and <strong>sub-1000 ms retrieval latency</strong>.</li>
-            <li>Automated end-to-end infrastructure provisioning with Terraform and Ansible integrated into GitHub Actions CI/CD pipelines, cutting deployment time by <strong>40%</strong>.</li>
-            <li>Administered production Kubernetes clusters for containerised workloads and orchestrated a full K8S infrastructure migration from Azure to AWS with zero data loss.</li>
-            <li>Architected and rolled out a Snyk DevSecOps program for an internal department, integrating repository scanning, container image scanning, and CI/CD pipeline gates to enforce shift-left security practices.</li>
-            <li>Managed endpoint security operations using WithSecure Element EDR, monitoring and triaging security alerts across laptops, VMs, and servers to ensure rapid threat detection and response.</li>
-            <li>Conducted cloud and container vulnerability assessments using Nessus, remediating findings to maintain a hardened security posture.</li>
-            <li>Lead cloud cost-optimisation initiatives by enforcing governance policies and rightsizing resource utilisation across cloud tenancies.</li>
-            <li>Implemented Site24x7 observability solutions and streamlined incident-response workflows through Jira ITSM integration.</li>
-          </ul>
-        </div>
 
-        <!-- Infosys -->
-        <div class="job-card">
-          <div class="job-header">
-            <div class="job-meta">
-              <span class="company">Infosys</span>
-              <span class="location">Remote</span>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+              <div class="job-header">
+                <div class="job-meta">
+                  <span class="company">Infosys</span>
+                  <span class="location">Remote</span>
+                </div>
+                <span class="dates">Sep 2021 – May 2025</span>
+              </div>
+              <p class="job-title">Systems Engineer</p>
+              <ul class="job-bullets">
+                <li>Led the Command Centre team responsible for L1 monitoring of the full infrastructure stack — servers, databases, network devices, backup systems, and storage — ensuring rapid detection and escalation of incidents across enterprise environments.</li>
+                <li>Managed hybrid cloud environments spanning Azure, VMware vSphere, AWS, and OCI for enterprise-grade clients, ensuring consistent SLA adherence.</li>
+                <li>Administered Windows and Linux server estates including provisioning, configuration, performance tuning, and troubleshooting for enterprise-grade environments.</li>
+                <li>Configured and maintained Azure networking components (VNets, NSGs, VPN Gateways) and led cross-functional L1 operations teams for 24/7 proactive monitoring.</li>
+                <li>Reduced system downtime by <span class="highlight-metric">40%</span> by integrating Nagios XI with ITSM platforms, establishing automated alerting and escalation workflows.</li>
+                <li>Directed patch management and backup/recovery operations across Windows and Linux servers, maintaining compliance with regulatory and SLA requirements.</li>
+                <li>Served as a technical escalation point for critical multi-cloud infrastructure issues across Azure, VMware, OCI, and AWS environments.</li>
+              </ul>
             </div>
-            <span class="dates">Sep 2021 – May 2025</span>
           </div>
-          <p class="job-title">Systems Engineer</p>
-          <ul class="job-bullets">
-            <li>Led the Command Centre team responsible for L1 monitoring of the full infrastructure stack — servers, databases, network devices, backup systems, and storage — ensuring rapid detection and escalation of incidents across enterprise environments.</li>
-            <li>Managed hybrid cloud environments spanning Azure, VMware vSphere, AWS, and OCI for enterprise-grade clients, ensuring consistent SLA adherence.</li>
-            <li>Administered Windows and Linux server estates including provisioning, configuration, performance tuning, and troubleshooting for enterprise-grade environments.</li>
-            <li>Configured and maintained Azure networking components (VNets, NSGs, VPN Gateways) and led cross-functional L1 operations teams for 24/7 proactive monitoring.</li>
-            <li>Reduced system downtime by <strong>40%</strong> by integrating Nagios XI with ITSM platforms, establishing automated alerting and escalation workflows.</li>
-            <li>Directed patch management and backup/recovery operations across Windows and Linux servers, maintaining compliance with regulatory and SLA requirements.</li>
-            <li>Served as a technical escalation point for critical multi-cloud infrastructure issues across Azure, VMware, OCI, and AWS environments.</li>
-          </ul>
-        </div>
 
+        </div>
       </div>
     </section>
 
     <!-- ── SKILLS ────────────────────────────────────────────────── -->
     <section id="skills">
       <div class="container">
-        <h2 class="section-label">Technical Skills</h2>
+        <h2 class="section-label reveal">Technical Skills</h2>
         <div class="skills-grid">
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Cloud Platforms</span>
+          <div class="skill-card reveal" style="--delay:0ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">☁️</span>
+              <span class="skill-label">Cloud Platforms</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">AWS</span>
               <span class="pill-tag">Microsoft Azure</span>
@@ -143,32 +184,41 @@
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">IaC &amp; Automation</span>
+          <div class="skill-card reveal" style="--delay:60ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">⚙️</span>
+              <span class="skill-label">IaC &amp; Automation</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">Terraform</span>
               <span class="pill-tag">Ansible</span>
-              <span class="pill-tag">AWS CloudFormation</span>
+              <span class="pill-tag">CloudFormation</span>
               <span class="pill-tag">AWS CDK</span>
               <span class="pill-tag">ARM Templates</span>
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Cloud AI &amp; Serverless</span>
+          <div class="skill-card reveal highlight-card" style="--delay:120ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">🤖</span>
+              <span class="skill-label">Cloud AI &amp; Serverless</span>
+            </div>
             <div class="skill-pills">
-              <span class="pill-tag highlight">AWS Bedrock</span>
-              <span class="pill-tag highlight">S3 Vectors</span>
-              <span class="pill-tag">AWS Lambda</span>
+              <span class="pill-tag glow">AWS Bedrock</span>
+              <span class="pill-tag glow">S3 Vectors</span>
+              <span class="pill-tag">Lambda</span>
               <span class="pill-tag">API Gateway</span>
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Security &amp; Compliance</span>
+          <div class="skill-card reveal highlight-card" style="--delay:180ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">🔒</span>
+              <span class="skill-label">Security &amp; Compliance</span>
+            </div>
             <div class="skill-pills">
-              <span class="pill-tag highlight">Snyk</span>
-              <span class="pill-tag highlight">WithSecure Element EDR</span>
+              <span class="pill-tag glow">Snyk</span>
+              <span class="pill-tag glow">WithSecure EDR</span>
               <span class="pill-tag">Nessus</span>
               <span class="pill-tag">Container Security</span>
               <span class="pill-tag">Cloud Security</span>
@@ -176,8 +226,11 @@
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Containers &amp; Orchestration</span>
+          <div class="skill-card reveal" style="--delay:240ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">🐳</span>
+              <span class="skill-label">Containers &amp; Orchestration</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">Kubernetes</span>
               <span class="pill-tag">Docker</span>
@@ -185,8 +238,11 @@
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">CI/CD &amp; Version Control</span>
+          <div class="skill-card reveal" style="--delay:300ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">🚀</span>
+              <span class="skill-label">CI/CD &amp; Version Control</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">GitHub Actions</span>
               <span class="pill-tag">GitLab CI/CD</span>
@@ -194,8 +250,11 @@
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Monitoring &amp; Observability</span>
+          <div class="skill-card reveal" style="--delay:360ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">📊</span>
+              <span class="skill-label">Monitoring &amp; Observability</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">Nagios XI</span>
               <span class="pill-tag">Azure Monitor</span>
@@ -203,8 +262,11 @@
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Scripting &amp; OS</span>
+          <div class="skill-card reveal" style="--delay:420ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">💻</span>
+              <span class="skill-label">Scripting &amp; OS</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">Python</span>
               <span class="pill-tag">Bash</span>
@@ -216,8 +278,11 @@
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Networking</span>
+          <div class="skill-card reveal" style="--delay:480ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">🌐</span>
+              <span class="skill-label">Networking</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">TCP/IP</span>
               <span class="pill-tag">DNS</span>
@@ -227,13 +292,15 @@
             </div>
           </div>
 
-          <div class="skill-row reveal">
-            <span class="skill-label">Soft Skills</span>
+          <div class="skill-card reveal" style="--delay:540ms">
+            <div class="skill-card-header">
+              <span class="skill-icon">🤝</span>
+              <span class="skill-label">Soft Skills</span>
+            </div>
             <div class="skill-pills">
               <span class="pill-tag">Team Leadership</span>
               <span class="pill-tag">Cross-functional Collaboration</span>
               <span class="pill-tag">Project Management</span>
-              <span class="pill-tag">Adaptability</span>
               <span class="pill-tag">Critical Thinking</span>
             </div>
           </div>
@@ -245,39 +312,47 @@
     <!-- ── CERTIFICATIONS ─────────────────────────────────────────── -->
     <section id="certifications">
       <div class="container">
-        <h2 class="section-label">Certifications</h2>
+        <h2 class="section-label reveal">Certifications</h2>
         <div class="cert-grid">
 
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" style="--delay:0ms">
+            <div class="cert-glow"></div>
             <div class="cert-badge azure">AZ</div>
             <div class="cert-info">
               <p class="cert-name">Azure Fundamentals</p>
               <p class="cert-code">Microsoft · AZ-900</p>
             </div>
+            <div class="cert-check">✓</div>
           </div>
 
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" style="--delay:80ms">
+            <div class="cert-glow"></div>
             <div class="cert-badge azure">AZ</div>
             <div class="cert-info">
               <p class="cert-name">Azure Administrator Associate</p>
               <p class="cert-code">Microsoft · AZ-104</p>
             </div>
+            <div class="cert-check">✓</div>
           </div>
 
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" style="--delay:160ms">
+            <div class="cert-glow"></div>
             <div class="cert-badge m365">M365</div>
             <div class="cert-info">
               <p class="cert-name">Microsoft 365 Fundamentals</p>
               <p class="cert-code">Microsoft · MS-900</p>
             </div>
+            <div class="cert-check">✓</div>
           </div>
 
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" style="--delay:240ms">
+            <div class="cert-glow"></div>
             <div class="cert-badge oci">OCI</div>
             <div class="cert-info">
               <p class="cert-name">OCI Foundations Associate</p>
               <p class="cert-code">Oracle · 2025</p>
             </div>
+            <div class="cert-check">✓</div>
           </div>
 
         </div>
@@ -289,18 +364,16 @@
   <!-- ── FOOTER ───────────────────────────────────────────────── -->
   <footer>
     <div class="container">
-      <p>
+      <div class="footer-links">
         <a href="mailto:yadneshkulkarni3@gmail.com">yadneshkulkarni3@gmail.com</a>
         <span class="sep">·</span>
         <a href="tel:+919527839573">+91-9527839573</a>
-      </p>
-      <p class="footer-note">
+        <span class="sep">·</span>
         <a href="https://www.linkedin.com/in/yadnesh-kulkarni/" target="_blank" rel="noopener">LinkedIn</a>
         <span class="sep">·</span>
         <a href="https://github.com/Demonslayer965" target="_blank" rel="noopener">GitHub</a>
-        <span class="sep">·</span>
-        Built with HTML &amp; CSS · Deployed on GitHub Pages
-      </p>
+      </div>
+      <p class="footer-note">Built with HTML &amp; CSS · Deployed on GitHub Pages</p>
     </div>
   </footer>
 
